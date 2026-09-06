@@ -111,9 +111,11 @@ print(attention_scores)
 print("\nAttention Scores Shape:")
 print(attention_scores.shape)
 
-# Convert scores into probabilities
+
+
 # ------------------------------------------------------------
 # 3. Apply Softmax
+# Convert scores into probabilities
 # ------------------------------------------------------------
 
 attention_weights = F.softmax(
@@ -130,7 +132,7 @@ print(attention_weights.shape)
 
 # ------------------------------------------------------------
 # 4. Weighted combination of token representations
-    # Create the contextual representation
+# Create the contextual representation
 # ------------------------------------------------------------
 
 output = torch.matmul(
