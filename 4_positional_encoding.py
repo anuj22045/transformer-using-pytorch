@@ -87,44 +87,107 @@ shape = [3, 4]
 
 """
 
+# ============================================================
+# MODULE 04: POSITIONAL ENCODING
+# ============================================================
+
+import torch
+import math
+
+
 # ------------------------------------------------------------
-# 8. Create example token embeddings
+# 1. Define basic parameters
 # ------------------------------------------------------------
 
-# Suppose:
-# batch_size = 1
-# sequence_length = 5
-# embedding_dim = 6
+sequence_length = 5
+embedding_dim = 6
 
-token_embeddings = torch.randn(
-    1,
+
+# ------------------------------------------------------------
+# 2. Create a positional encoding matrix
+# ------------------------------------------------------------
+
+# Shape:
+# [sequence_length, embedding_dim]
+
+positional_encoding = torch.zeros(
     sequence_length,
     embedding_dim
 )
 
-print("\nToken Embedding Shape:")
-print(token_embeddings.shape)
+
+# ------------------------------------------------------------
+# 3. Create position values
+# ------------------------------------------------------------
+
+# Positions:
+# 0, 1, 2, 3, 4
+
+position = torch.arange(
+    sequence_length,
+    dtype=torch.float
+).unsqueeze(1)
+
+print("Position shape:")
+print(position.shape)
+
+print("\nPosition:")
+print(position)
 
 
 # ------------------------------------------------------------
-# 9. Add positional encoding
+# 4. Create the division term
 # ------------------------------------------------------------
 
-# Add a batch dimension to positional encoding.
-# [5, 6] → [1, 5, 6]
+# This is part of the original Transformer
+# sinusoidal positional encoding formula.
 
-positional_encoding = positional_encoding.unsqueeze(0)
+div_term = torch.exp(
+    torch.arange(
+        0,
+        embedding_dim,
+        2
+    ).float()
+    * (-math.log(10000.0) / embedding_dim)
+)
 
-print("\nPositional Encoding after unsqueeze:")
+print("\nDivision term:")
+print(div_term)
+
+print("\nDivision term shape:")
+print(div_term.shape)
+
+
+# ------------------------------------------------------------
+# 5. Apply Sine to even dimensions
+# ------------------------------------------------------------
+
+# Even dimensions:
+# 0, 2, 4, ...
+
+positional_encoding[:, 0::2] = torch.sin(
+    position * div_term
+)
+
+
+# ------------------------------------------------------------
+# 6. Apply Cosine to odd dimensions
+# ------------------------------------------------------------
+
+# Odd dimensions:
+# 1, 3, 5, ...
+
+positional_encoding[:, 1::2] = torch.cos(
+    position * div_term
+)
+
+
+# ------------------------------------------------------------
+# 7. Print positional encoding
+# ------------------------------------------------------------
+
+print("\nPositional Encoding:")
+print(positional_encoding)
+
+print("\nPositional Encoding Shape:")
 print(positional_encoding.shape)
-
-
-# Add token information + position information
-
-transformer_input = token_embeddings + positional_encoding
-
-print("\nTransformer Input:")
-print(transformer_input)
-
-print("\nTransformer Input Shape:")
-print(transformer_input.shape)
