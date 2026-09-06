@@ -145,3 +145,18 @@ print(output)
 
 print("\nOutput Shape:")
 print(output.shape)
+
+"""
+-----------------------------------------------------------------------------
+MEMORY NOTE
+-----------------------------------------------------------------------------
+
+I need tokens to interact with each other
+→ Self-Attention
+
+I need to know which tokens are important
+→ Attention Weights
+
+I need contextual information for every token
+→ Self-Attention
+"""
