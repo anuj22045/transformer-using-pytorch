@@ -198,3 +198,21 @@ output = torch.matmul(
     V
 )
 """
+
+"""
+-----------------------------------------------------------------------------
+MEMORY NOTE
+-----------------------------------------------------------------------------
+
+I need to compare Queries and Keys
+→ Dot Product
+
+I need to prevent very large attention scores
+→ Scaling by √d
+
+I need attention probabilities
+→ Softmax
+
+I need to combine important information
+→ Weighted Values
+"""
