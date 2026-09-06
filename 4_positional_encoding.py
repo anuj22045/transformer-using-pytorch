@@ -191,3 +191,18 @@ print(positional_encoding)
 
 print("\nPositional Encoding Shape:")
 print(positional_encoding.shape)
+
+"""
+-----------------------------------------------------------------------------
+MEMORY NOTE
+-----------------------------------------------------------------------------
+
+I need the Transformer to understand token order
+→ Positional Encoding
+
+I need position information for every token
+→ Position vectors
+
+I need to combine token meaning and position
+→ Embedding + Positional Encoding
+"""
