@@ -2,7 +2,8 @@
 """
 WHAT IS MULTI-HEAD ATTENTION?
 
-Multi-Head Attention means running multiple attention mechanisms (heads) in parallel.
+Multi-Head Attention means running multiple attention mechanisms (heads) in parallel. 
+(in short it expand the models ability of different position of tokens)
 Instead of having one attention operation understand relationships between tokens, we create several heads.
 Each head can learn to focus on different types of relationships.
 Then all the heads are combined to produce the final output.
@@ -261,3 +262,21 @@ print(output)
 
 print("\nFinal Output Shape:")
 print(output.shape)
+
+"""
+-----------------------------------------------------------------------------
+MEMORY NOTE
+-----------------------------------------------------------------------------
+
+I need multiple attention patterns at the same time
+→ Multi-Head Attention
+
+I need to divide the representation among heads
+→ head_dim = d_model / num_heads
+
+I need to combine information from all heads
+→ Concatenate
+
+I need the combined heads transformed back
+→ Output Linear Layer
+"""
