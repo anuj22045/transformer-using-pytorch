@@ -207,3 +207,18 @@ print(output)
 
 print("\nOutput Shape:")
 print(output.shape)
+
+"""
+-----------------------------------------------------------------------------
+MEMORY NOTE
+-----------------------------------------------------------------------------
+
+I need to ask what information a token is looking for
+→ Query
+
+I need to know what information a token offers for matching
+→ Key
+
+I need the actual information from a token
+→ Value
+"""
