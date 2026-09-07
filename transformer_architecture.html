@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Core 7 Steps</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 35px;
+        }
+
+        .step {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+        }
+
+        .step h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .modules {
+            background: #f3f4f6;
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: Consolas, monospace;
+        }
+
+        .modules div {
+            margin: 4px 0;
+        }
+
+        .description {
+            color: #4b5563;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #111827;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Transformer — Core 7 Steps</h1>
+    <p class="subtitle">
+        From individual components to a complete Transformer
+    </p>
+
+    <!-- STEP 1 -->
+    <section class="step">
+        <h2>1. Transformer Input</h2>
+
+        <div class="modules">
+            <div>MODULE 03 → Token Embedding</div>
+            <div>MODULE 04 → Positional Encoding</div>
+        </div>
+
+        <p class="description">
+            These prepare the input for the Transformer.
+        </p>
+
+        <pre>Tokens
+  ↓
+Embedding
+  ↓
+Positional Encoding</pre>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step">
+        <h2>2. Attention — One Major Core Component</h2>
+
+        <div class="modules">
+            <div>MODULE 05 → Self-Attention</div>
+            <div>MODULE 06 → Q, K, V</div>
+            <div>MODULE 07 → Scaled Dot-Product Attention</div>
+            <div>MODULE 08 → Multi-Head Attention</div>
+        </div>
+
+        <p class="description">
+            These collectively teach you <span class="highlight">Multi-Head Self-Attention</span>.
+        </p>
+
+        <p class="description">
+            The final implementation will essentially become:
+        </p>
+
+        <pre>Input
+ ↓
+Q, K, V
+ ↓
+Scaled Dot-Product Attention
+ ↓
+Multiple Heads
+ ↓
+Concatenate
+ ↓
+Linear</pre>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step">
+        <h2>3. Feed Forward + Supporting Components</h2>
+
+        <div class="modules">
+            <div>MODULE 09 → Feed Forward Network</div>
+            <div>MODULE 10 → Residual Connection</div>
+            <div>MODULE 11 → Layer Normalization</div>
+        </div>
+
+        <p class="description">
+            These are components used around the attention and FFN layers.
+        </p>
+
+        <p class="description">
+            Together they form the basis of an <span class="highlight">Encoder Block</span>.
+        </p>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step">
+        <h2>4. Then We Combine Them</h2>
+
+        <div class="modules">
+            <div>MODULE 12 → Complete Encoder Block</div>
+        </div>
+
+        <p class="description">
+            At this point, the individual pieces become an actual Transformer Encoder block.
+        </p>
+
+        <pre>Input
+ ↓
+Multi-Head Self-Attention
+ ↓
+Add &amp; Norm
+ ↓
+Feed Forward
+ ↓
+Add &amp; Norm
+ ↓
+Encoder Output</pre>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step">
+        <h2>5. Decoder Side</h2>
+
+        <div class="modules">
+            <div>MODULE 13 → Masked Self-Attention</div>
+            <div>MODULE 14 → Causal Mask</div>
+            <div>MODULE 15 → Cross-Attention</div>
+            <div>MODULE 16 → Complete Decoder Block</div>
+        </div>
+
+        <p class="description">
+            These are partly subtopics of the Decoder, separated so each mechanism can be understood properly.
+        </p>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="step">
+        <h2>6. Final Transformer</h2>
+
+        <div class="modules">
+            <div>MODULE 17 → Encoder + Decoder Integration</div>
+            <div>MODULE 18 → Linear + Vocabulary Logits</div>
+            <div>MODULE 19 → Teacher Forcing</div>
+            <div>MODULE 20 → Transformer Training Loop</div>
+        </div>
+
+        <p class="description">
+            Now we move from <span class="highlight">architecture → actual training system</span>.
+        </p>
+    </section>
+
+    <!-- STEP 7 -->
+    <section class="step">
+        <h2>7. Complete Implementation</h2>
+
+        <div class="modules">
+            <div>MODULE 21 → Padding Mask</div>
+            <div>MODULE 22 → Attention Mask</div>
+            <div>MODULE 23 → Complete Transformer</div>
+        </div>
+
+        <p class="description">
+            This is where the complete Transformer comes together.
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
