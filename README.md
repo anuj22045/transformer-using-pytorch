@@ -95,7 +95,4 @@ python 12_complete_encoder_block.py
 
 ## Learning Order
 
-Follow the modules in order:
-
-```Follow the modules in order (01 -> 23) for the best learning experience. Each module builds on concepts from previous ones.
-```
+Follow the modules in order (01 -> 23) for the best learning experience. Each module builds on concepts from previous ones.
