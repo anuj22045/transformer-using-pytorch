@@ -73,6 +73,9 @@ Understanding different masks used to control attention behavior.
 ### Module 23 — Complete Transformer
 Combining the major Transformer components into one complete architecture.
 
+Transformer Notes:
+Take reference to know more about the transformer in Notes folder
+
 ## How to Run
 
 Install PyTorch:
